@@ -9,6 +9,8 @@ namespace kompasSword
 {
     public enum zyx
     {
-        
+        Xy = Obj3dType.o3d_planeXOY,
+        Xz = Obj3dType.o3d_planeXOZ,
+        Yz = Obj3dType.o3d_planeYOZ
     }
 }

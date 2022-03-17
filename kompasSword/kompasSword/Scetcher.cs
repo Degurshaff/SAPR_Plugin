@@ -9,14 +9,18 @@ using Kompas6Constants3D;
 
 namespace kompasSword
 {
-    class risovalka
+    public static class Scetcher
     {
-        public static ksEntity CreateScetch(ksPart part,short plane)
+        public static ksEntity CreateScetch(ksPart part, short plane)
         {
             var sketch = (ksEntity)part.NewEntity((short)Obj3dType.o3d_sketch);
             var definition = (ksSketchDefinition)sketch.GetDefinition();
             definition.SetPlane(part.GetDefaultEntity(plane));
             return sketch;
+        }
+        public static ksDocument2D Edit(this ksSketchDefinition definition)
+        {
+            return (ksDocument2D)definition.BeginEdit();
         }
     }
 }

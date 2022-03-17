@@ -9,7 +9,7 @@ namespace kompasSword
     /// <summary>
     /// Реализует создание экземпляра КОМПАС-3D и подключение к нему
     /// </summary>
-    public static class KompasConnector
+    public static class kompasConnect
     {
         /// <summary>
         /// Данная строка передаётся в метод GetActiveObject() объекта

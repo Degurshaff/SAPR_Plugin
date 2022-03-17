@@ -15,9 +15,9 @@ namespace kompasSwordUi
 {
     public partial class mainForm : Form
     {
-        private KompasObject _kotmans;
-        private ksPart _troot;
-        private ksDocument3D _qr;
+        private KompasObject _kompas;
+        private ksPart _root;
+        private ksDocument3D _document;
         public mainForm()
         {
             InitializeComponent();
@@ -25,10 +25,16 @@ namespace kompasSwordUi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _kotmans = KompasConnector.GetKompasInstance();
-            _qr = KompasConnector.GetActiveDocument3D(_kotmans);
-            _troot = _qr.GetPart((short)Part_Type.pTop_Part);
+            _kompas = kompasConnect.GetKompasInstance();
+            _document = kompasConnect.GetActiveDocument3D(_kompas);
+            _root = _document.GetPart((short)Part_Type.pTop_Part);
 
+            var sketch = Scetcher.CreateScetch(_root, (short)zyx.Xy);
+            var definition = (ksSketchDefinition)sketch.GetDefinition();
+            var edit = definition.Edit();
+
+            edit.ksLineSeg(1, 1, 2, 2, 1);
+            definition.EndEdit();
         }
     }
 }
