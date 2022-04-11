@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kompas6Constants3D;
 
-namespace kompasSword
+namespace KompasSword
 {
     public enum zyx
     {
