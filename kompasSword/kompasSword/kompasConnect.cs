@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using Kompas6API5;
 
-namespace kompasSword 
+namespace KompasSword 
 {
     /// <summary>
     /// Реализует создание экземпляра КОМПАС-3D и подключение к нему
